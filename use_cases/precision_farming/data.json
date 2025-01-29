@@ -1,0 +1,116 @@
+{
+  "fields": {
+    "FIELD001": {
+      "farmer_name": "Alice Vineyard",
+      "analysis_plan": "Soil & Weather Monitoring",
+      "monthly_charge": 150.0,
+      "months_with_service": 12,
+      "soil_quality": {
+        "pH": 6.7,
+        "moisture": 28,
+        "N": 40,
+        "P": 35,
+        "K": 25
+      },
+      "weather": {
+        "avg_temperature_c": 20,
+        "rainfall_mm": 60
+      },
+      "crop_health": {
+        "yield_per_hectare": 3.2,
+        "disease_incidents": 2
+      },
+      "analysis_score": 0.65
+    },
+    "FIELD002": {
+      "farmer_name": "Bob Wheatfield",
+      "analysis_plan": "Basic Soil Monitoring",
+      "monthly_charge": 100.0,
+      "months_with_service": 8,
+      "soil_quality": {
+        "pH": 5.8,
+        "moisture": 22,
+        "N": 35,
+        "P": 15,
+        "K": 13
+      },
+      "weather": {
+        "avg_temperature_c": 23,
+        "rainfall_mm": 45
+      },
+      "crop_health": {
+        "yield_per_hectare": 2.8,
+        "disease_incidents": 1
+      },
+      "analysis_score": 0.4
+    },
+    "FIELD003": {
+      "farmer_name": "Carol Orchard",
+      "analysis_plan": "Comprehensive Crop Health",
+      "monthly_charge": 200.0,
+      "months_with_service": 6,
+      "soil_quality": {
+        "pH": 6.9,
+        "moisture": 30,
+        "N": 45,
+        "P": 40,
+        "K": 35
+      },
+      "weather": {
+        "avg_temperature_c": 22,
+        "rainfall_mm": 55
+      },
+      "crop_health": {
+        "yield_per_hectare": 3.8,
+        "disease_incidents": 3
+      },
+      "analysis_score": 0.82
+    }
+  },
+  "analysis_plans": {
+    "Soil & Weather Monitoring": {
+      "monthly_cost": 150.0,
+      "features": [
+        "Soil sampling",
+        "Moisture measurement",
+        "Weather forecasting"
+      ]
+    },
+    "Basic Soil Monitoring": {
+      "monthly_cost": 100.0,
+      "features": [
+        "pH measurement",
+        "Moisture check"
+      ]
+    },
+    "Comprehensive Crop Health": {
+      "monthly_cost": 200.0,
+      "features": [
+        "Soil sampling & testing",
+        "Weather forecasting",
+        "Crop disease scanning"
+      ]
+    }
+  },
+  "analysis_model": {
+    "model_version": "agro_v1.0",
+    "algorithm": "random_forest",
+    "analysis_threshold": 0.7
+  },
+  "recommendations": [
+    {
+      "recommendation_id": "REC001",
+      "description": "Apply nitrogen fertilizer",
+      "eligibility_criteria": "analysis_score>0.5"
+    },
+    {
+      "recommendation_id": "REC002",
+      "description": "Schedule pest control measures",
+      "eligibility_criteria": "analysis_score>0.8"
+    }
+  ],
+  "support_resources": {
+    "available_agents": 15,
+    "field_visit_slots": 40
+  }
+}

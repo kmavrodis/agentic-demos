@@ -1,0 +1,66 @@
+{
+  "orders": {
+    "ORD1001": {
+      "destination": "101 Green Avenue, Springfield",
+      "priority": "High",
+      "package_weight": 4.5,
+      "deadline": "2023-10-20T12:00:00",
+      "status": "pending"
+    },
+    "ORD1002": {
+      "destination": "22 Sunset Blvd, Shelbyville",
+      "priority": "Medium",
+      "package_weight": 10.0,
+      "deadline": "2023-10-25T09:00:00",
+      "status": "pending"
+    },
+    "ORD1003": {
+      "destination": "77 Oak Street, Capital City",
+      "priority": "High",
+      "package_weight": 2.0,
+      "deadline": "2023-10-18T17:00:00",
+      "status": "in_progress"
+    }
+  },
+  "drivers": {
+    "DRV2001": {
+      "name": "John Doe",
+      "license_type": "Class C",
+      "years_experience": 5,
+      "rating": 4.7
+    },
+    "DRV2002": {
+      "name": "Emma Davis",
+      "license_type": "Class B",
+      "years_experience": 2,
+      "rating": 4.1
+    },
+    "DRV2003": {
+      "name": "Paul Smith",
+      "license_type": "Class C",
+      "years_experience": 7,
+      "rating": 4.9
+    }
+  },
+  "fleet": {
+    "VHC3001": {
+      "vehicle_type": "Cargo Van",
+      "capacity_kg": 1200,
+      "fuel_type": "Diesel"
+    },
+    "VHC3002": {
+      "vehicle_type": "Box Truck",
+      "capacity_kg": 3000,
+      "fuel_type": "Diesel"
+    }
+  },
+  "route_model": {
+    "model_version": "v1.0",
+    "algorithm": "optimized_route_planner",
+    "max_stop_per_route": 10
+  },
+  "schedule_resources": {
+    "available_drivers": 4,
+    "available_vehicles": 3
+  }
+}

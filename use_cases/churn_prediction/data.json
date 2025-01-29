@@ -1,0 +1,90 @@
+{
+  "customers": {
+    "CUST1001": {
+      "name": "Alice Johnson",
+      "plan": "Unlimited Talk & Text",
+      "monthly_charge": 50.0,
+      "months_with_company": 14,
+      "usage": {
+        "minutes_used": 480,
+        "data_gb_used": 3.1
+      },
+      "support_calls": 2,
+      "last_support_call_date": "2023-09-05",
+      "churn_score": 0.18
+    },
+    "CUST1002": {
+      "name": "Bob Smith",
+      "plan": "Standard Plan",
+      "monthly_charge": 35.0,
+      "months_with_company": 9,
+      "usage": {
+        "minutes_used": 250,
+        "data_gb_used": 1.75
+      },
+      "support_calls": 4,
+      "last_support_call_date": "2023-09-12",
+      "churn_score": 0.49
+    },
+    "CUST1003": {
+      "name": "Carol Danvers",
+      "plan": "Premium Data Plan",
+      "monthly_charge": 75.0,
+      "months_with_company": 6,
+      "usage": {
+        "minutes_used": 560,
+        "data_gb_used": 10.2
+      },
+      "support_calls": 5,
+      "last_support_call_date": "2023-10-01",
+      "churn_score": 0.82
+    }
+  },
+  "plans": {
+    "Unlimited Talk & Text": {
+      "monthly_cost": 50.0,
+      "features": [
+        "Unlimited minutes",
+        "Unlimited texts",
+        "Data not included"
+      ]
+    },
+    "Standard Plan": {
+      "monthly_cost": 35.0,
+      "features": [
+        "500 minutes included",
+        "Unlimited texts",
+        "1 GB data"
+      ]
+    },
+    "Premium Data Plan": {
+      "monthly_cost": 75.0,
+      "features": [
+        "Unlimited minutes",
+        "Unlimited texts",
+        "Unlimited data"
+      ]
+    }
+  },
+  "churn_model": {
+    "model_version": "v1.0",
+    "algorithm": "random_forest",
+    "churn_threshold": 0.7
+  },
+  "retention_offers": [
+    {
+      "offer_id": "OFF1001",
+      "description": "10% off monthly bill for 6 months",
+      "eligibility_criteria": "churn_score>0.5"
+    },
+    {
+      "offer_id": "OFF1002",
+      "description": "Free device upgrade",
+      "eligibility_criteria": "churn_score>0.8"
+    }
+  ],
+  "support_resources": {
+    "available_agents": 25,
+    "callback_slots": 100
+  }
+}
