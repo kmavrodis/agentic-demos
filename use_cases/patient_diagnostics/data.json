@@ -1,0 +1,67 @@
+{
+  "patients": {
+    "PAT001": {
+      "name": "John Smith",
+      "birthdate": "1970-05-12",
+      "medical_history": [
+        {
+          "diagnosis": "Hypertension",
+          "date": "2000-05-01",
+          "treating_doctor": "DR1001"
+        },
+        {
+          "diagnosis": "Cancer",
+          "date": "2019-11-10",
+          "treating_doctor": "DR1003"
+        }
+      ],
+      "current_medications": [
+        "MedicationA",
+        "MedicationB"
+      ],
+      "symptoms_reported": [
+        {
+          "symptom": "Fatigue",
+          "reported_date": "2023-09-01",
+          "severity": "mild"
+        }
+      ]
+    },
+    "PAT002": {
+      "name": "Mary Johnson",
+      "birthdate": "1985-02-20",
+      "medical_history": [
+        {
+          "diagnosis": "Migraine",
+          "date": "2021-03-15",
+          "treating_doctor": "DR1002"
+        }
+      ],
+      "current_medications": [],
+      "symptoms_reported": []
+    }
+  },
+  "doctors": {
+    "DR1001": {
+      "name": "Dr. Sarah Johnson",
+      "specialty": "Cardiology"
+    },
+    "DR1002": {
+      "name": "Dr. Mark Wilson",
+      "specialty": "Neurology"
+    },
+    "DR1003": {
+      "name": "Dr. Emily Brown",
+      "specialty": "Oncology"
+    }
+  },
+  "lab_tests": [
+    {
+      "test_id": "LT3001",
+      "patient_id": "PAT001",
+      "test_type": "Blood Panel",
+      "date_conducted": "2023-09-02",
+      "results_summary": "Slightly elevated WBC count"
+    }
+  ]
+}

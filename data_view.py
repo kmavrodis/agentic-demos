@@ -70,7 +70,7 @@ def create_grid_layout(items_list):
                             st.error(f"Error displaying {key}: {str(e)}")
                             st.json(value)
 
-def display_data_tab(data, use_case, tools):
+def display_data_tab(data, use_case, tools, functions):
     """Display the data view tab content."""
     
     # Create two columns for main content and data management
@@ -83,33 +83,8 @@ def display_data_tab(data, use_case, tools):
         items_list = list(st.session_state.context.items())
         create_grid_layout(items_list)
         
-        # Display tools below the data
-        st.markdown("---")
-        st.subheader("Available Tools")
-        cols = st.columns(2)
-        with cols[0]:
-            
-            with st.expander("🔧 Functions available to the AI Agents", expanded=True):
-                st.info("A list of functions that the AI Agents can use to manipulate the data above or handle connections with external systems (APIs, AI Search etc.).")
-                simplified_tools = [
-                    {
-                        "name": tool["function"]["name"],
-                        "description": tool["function"]["description"]
-                    }
-                    for tool in tools
-                    if tool.get("type") == "function" and "function" in tool
-                ]
-                
-                tools_md = "\n".join([
-                    f"\n**`{tool['name']}`**  \n{tool['description']}\n"
-                    for tool in simplified_tools
-                ])
-                
-                st.markdown(f"""
-                    <div style="height: 400px; overflow-y: scroll; padding-right: 10px;">
-                        {tools_md}
-                """, unsafe_allow_html=True)
-    
+   
+        
     with mgmt_col:
         # Data management controls in the right column
         st.markdown("### Data Management")
@@ -123,7 +98,6 @@ def display_data_tab(data, use_case, tools):
             value=1,
             help="Number of items to generate per table"
         )
-        
         data_generator = DataGenerator(st.session_state.get('client'))
         if st.button("Generate More Data", use_container_width=True):
             with st.spinner("Generating new data..."):
@@ -131,3 +105,33 @@ def display_data_tab(data, use_case, tools):
                 if updated_data:
                     st.session_state.context = updated_data
                     st.rerun()
+    
+
+    # Display tools below the data
+    st.markdown("---")
+    st.subheader("Available Tools")
+    with st.expander("🔧 Functions available to the AI Agents", expanded=True):
+        st.info("A list of functions that the AI Agents can use to manipulate the data above or handle connections with external systems (APIs, AI Search etc.).")
+        cols = st.columns(2)
+        with cols[0]:
+            simplified_tools = [
+                {
+                    "name": tool["function"]["name"],
+                    "description": tool["function"]["description"]
+                }
+                for tool in tools
+                if tool.get("type") == "function" and "function" in tool
+            ]
+            
+            tools_md = "\n".join([
+                f"\n**`{tool['name']}`**  \n{tool['description']}\n"
+                for tool in simplified_tools
+            ])
+            with st.container(height=400):
+                st.markdown(tools_md)
+
+        with cols[1]:
+            with st.container(height=400):
+                st.code(functions, language="python")
+        
+        

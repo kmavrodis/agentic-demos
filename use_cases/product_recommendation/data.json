@@ -1,0 +1,132 @@
+{
+    "customers": {
+      "CUST001": {
+        "customer_name": "Alice Anderson",
+        "membership_plan": "Gold",
+        "monthly_subscription_fee": 20.0,
+        "months_with_service": 12,
+        "preferences": {
+          "preferred_brands": [
+            "BrandA",
+            "BrandB"
+          ],
+          "preferred_categories": [
+            "Kitchen",
+            "Cleaning"
+          ]
+        },
+        "purchased_products": [
+          "PROD001",
+          "PROD003"
+        ],
+        "recommendation_score": 0.65
+      },
+      "CUST002": {
+        "customer_name": "Bob Brown",
+        "membership_plan": "Silver",
+        "monthly_subscription_fee": 10.0,
+        "months_with_service": 6,
+        "preferences": {
+          "preferred_brands": [
+            "BrandC"
+          ],
+          "preferred_categories": [
+            "Cleaning"
+          ]
+        },
+        "purchased_products": [
+          "PROD002"
+        ],
+        "recommendation_score": 0.4
+      },
+      "CUST003": {
+        "customer_name": "Carol Clark",
+        "membership_plan": "Platinum",
+        "monthly_subscription_fee": 30.0,
+        "months_with_service": 3,
+        "preferences": {
+          "preferred_brands": [
+            "BrandB",
+            "BrandD"
+          ],
+          "preferred_categories": [
+            "Entertainment",
+            "Kitchen"
+          ]
+        },
+        "purchased_products": [
+          "PROD003"
+        ],
+        "recommendation_score": 0.85
+      }
+    },
+    "products": {
+      "PROD001": {
+        "product_name": "BrandA Blender",
+        "brand": "BrandA",
+        "category": "Kitchen",
+        "price": 99.99,
+        "rating": 4.5
+      },
+      "PROD002": {
+        "product_name": "BrandC Vacuum Cleaner",
+        "brand": "BrandC",
+        "category": "Cleaning",
+        "price": 149.99,
+        "rating": 4.0
+      },
+      "PROD003": {
+        "product_name": "BrandB Smart Toaster",
+        "brand": "BrandB",
+        "category": "Kitchen",
+        "price": 79.99,
+        "rating": 4.2
+      }
+    },
+    "membership_plans": {
+      "Gold": {
+        "monthly_cost": 20.0,
+        "features": [
+          "Priority support",
+          "Access to exclusive deals",
+          "Monthly freebies"
+        ]
+      },
+      "Silver": {
+        "monthly_cost": 10.0,
+        "features": [
+          "Standard support",
+          "Occasional discounts"
+        ]
+      },
+      "Platinum": {
+        "monthly_cost": 30.0,
+        "features": [
+          "Dedicated support agent",
+          "Highest discount rates",
+          "Early access to new products"
+        ]
+      }
+    },
+    "recommendation_model": {
+      "model_version": "recommend_v1.0",
+      "algorithm": "collaborative_filtering",
+      "recommendation_threshold": 0.6
+    },
+    "recommendations": [
+      {
+        "recommendation_id": "REC001",
+        "description": "Offer a discount on selected kitchen appliances",
+        "eligibility_criteria": "recommendation_score>0.5"
+      },
+      {
+        "recommendation_id": "REC002",
+        "description": "Upsell premium cleaning bundle",
+        "eligibility_criteria": "recommendation_score>0.8"
+      }
+    ],
+    "support_resources": {
+      "available_agents": 10,
+      "support_tickets": 50
+    }
+  }

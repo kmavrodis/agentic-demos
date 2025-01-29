@@ -59,29 +59,39 @@ def create_use_case_files(name: str, files_content: dict):
 
 def generate_use_case_content(description: str, template: dict, o1_client) -> dict:
     """Generate new use case files using O1."""
-    prompt = f"""Given the following use case description and template files, generate a new set of files for this use case.
+    prompt = f"""
+Given the following use case description and example template files, generate a new set of files tailored to this specific use case.
 
-Description:
+Important: The provided templates serve only as examples. The new use case will require completely different data structures, functions, and tools. Adapt the implementation as needed.
+
+Use Case Description:
 {description}
 
-Template Files:
+Example Template Files:
+
 1. data.json (example structure):
 {json.dumps(template['data'], indent=2)}
 
-2. tools.py (example):
+2. tools.py (example implementation):
 {template['tools']}
 
-3. functions.py (example):
+3. functions.py (example implementation):
 {template['functions']}
 
-Please generate new versions of these files that implement the described use case while semantic cohesiveness.
-Improvise and create the data and tools that you find appropriate for this use case.
-Return the content as a JSON object with three keys: 'data', 'tools', and 'functions'.
-The 'data' value should be a JSON object, while 'tools' and 'functions' should be strings containing the Python code.
-The values True and False will also always be with a capital T and F respectively.
-Sample scenarios are necessary definitions of tasks that can be performed using the functions and sample data (if ID is needed it needs to be present in Sample Data)
-Function mapping is necessary.
-Format your response as a valid JSON object.
+Instructions for Generating the New Files:
+
+- Do not simply modify the examples. Instead, design new data structure and functions that best fit the new use case.
+- Ensure semantic cohesiveness while and don't blindly adapt the templates.
+- Improvise, create relevant data, tools, and functions that align with the described use case.
+- Include function mapping and sample scenarios demonstrating how the functions interact with the data (e.g., if an ID is required in a function, ensure it exists in the sample data).
+- Function mapping and sample scenarios should be included in the functions file.
+- Functions fetching customer details should accept both customer IDs and names as input.
+- The values True and False must always be capitalized.
+- Return the output as a JSON object with three keys:
+  - 'data' → A pure JSON object (not a string) representing the structured data. Do not include newline symbols (\\, \\n) in the JSON data object.
+  - 'tools' → A string containing the Python code for the tools.
+  - 'functions' → A string containing the Python code for the functions.
+
 """
 
     response = o1_client.chat.completions.create(

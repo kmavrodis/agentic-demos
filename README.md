@@ -7,6 +7,7 @@ A Streamlit application that demonstrates the use of AI agents (powered by OpenA
 This application provides a framework for creating and executing AI-powered workflows, where:
 - O1-Mini generates strategic plans for handling complex scenarios
 - GPT-4o executes these plans using predefined tools and functions
+- O1 generates new use cases alongside sample data, tools and functions
 - Business data and processes can be simulated and managed in real-time
 
 ## Features
@@ -30,6 +31,7 @@ This application provides a framework for creating and executing AI-powered work
   - Define custom tools and functions for each use case
   - Monitor tool usage and execution results
   - Handle errors and provide detailed feedback
+
 ## 🚀 Getting Started
 
 ### Prerequisites

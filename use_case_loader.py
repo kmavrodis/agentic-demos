@@ -3,6 +3,7 @@ import importlib.util
 import sys
 from pathlib import Path
 from typing import Dict, Any, Tuple, List
+import inspect
 
 class UseCaseLoader:
     def __init__(self, base_path: str = "use_cases"):
@@ -53,7 +54,8 @@ class UseCaseLoader:
                 'data': data,
                 'tools': getattr(tools_module, 'TOOLS', []),
                 'function_mapping': getattr(functions_module, 'FUNCTION_MAPPING', {}),
-                'sample_scenarios': getattr(functions_module, 'SAMPLE_SCENARIOS', [])
+                'sample_scenarios': getattr(functions_module, 'SAMPLE_SCENARIOS', []),
+                'functions': inspect.getsource(functions_module)
             }
             
         except Exception as e:

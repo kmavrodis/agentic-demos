@@ -46,7 +46,7 @@ def initialize_clients():
 def main():
     # Check for environment variables
     required_env_vars = [
-        "OPENAI_API_KEY", "OPENAI_ENDPOINT", "OPENAI_DEPLOYMENT_NAME",
+        "4o_OPENAI_API_KEY", "4o_OPENAI_ENDPOINT", "4o_OPENAI_DEPLOYMENT_NAME",
         "O1_OPENAI_API_KEY", "O1_OPENAI_ENDPOINT", "O1_OPENAI_DEPLOYMENT_NAME",
         "O1_MINI_OPENAI_API_KEY", "O1_MINI_OPENAI_ENDPOINT", "O1_MINI_OPENAI_DEPLOYMENT_NAME"
     ]
@@ -122,7 +122,8 @@ def main():
             display_data_tab(
                 data=st.session_state.context,
                 use_case=selected_use_case,
-                tools=components['tools']
+                tools=components['tools'],
+                functions=components['functions']
             )
             
         with tab2:

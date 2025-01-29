@@ -1,0 +1,87 @@
+{
+  "portfolios": [
+    {
+      "portfolio_id": "PORT1001",
+      "owner_id": "USER1001",
+      "holdings": [
+        {
+          "symbol": "AAPL",
+          "shares": 50,
+          "avg_cost": 130.0
+        },
+        {
+          "symbol": "GOOGL",
+          "shares": 20,
+          "avg_cost": 2200.0
+        }
+      ]
+    },
+    {
+      "portfolio_id": "PORT1002",
+      "owner_id": "USER1002",
+      "holdings": [
+        {
+          "symbol": "TSLA",
+          "shares": 10,
+          "avg_cost": 600.0
+        },
+        {
+          "symbol": "AMZN",
+          "shares": 5,
+          "avg_cost": 3100.0
+        }
+      ]
+    }
+  ],
+  "users": {
+    "USER1001": {
+      "name": "Alice",
+      "preferences": {
+        "risk_tolerance": "medium",
+        "preferred_instruments": [
+          "stocks"
+        ]
+      }
+    },
+    "USER1002": {
+      "name": "Bob",
+      "preferences": {
+        "risk_tolerance": "high",
+        "preferred_instruments": [
+          "stocks",
+          "crypto"
+        ]
+      }
+    }
+  },
+  "market_data": {
+    "AAPL": {
+      "price": 135.0,
+      "volume": 30000000
+    },
+    "GOOGL": {
+      "price": 2250.0,
+      "volume": 5000000
+    },
+    "TSLA": {
+      "price": 650.0,
+      "volume": 25000000
+    },
+    "AMZN": {
+      "price": 3150.0,
+      "volume": 3000000
+    }
+  },
+  "market_news": [
+    {
+      "news_id": "NEWS1001",
+      "headline": "Tech Stocks Rally Amid Renewed Investor Confidence",
+      "body": "Investors are looking to buy tech stocks as new earnings come in..."
+    },
+    {
+      "news_id": "NEWS1002",
+      "headline": "Cryptocurrency Volatility Continues",
+      "body": "Bitcoin and Ethereum experience swings as investors weigh regulatory concerns..."
+    }
+  ]
+}

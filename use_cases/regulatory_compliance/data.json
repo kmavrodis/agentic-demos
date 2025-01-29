@@ -1,0 +1,60 @@
+{
+  "customers": {
+    "CUST101": {
+      "name": "John Doe",
+      "ssn": "111-22-3333",
+      "tax_records": 90000,
+      "income_reported": 80000,
+      "transactions": [
+        {
+          "transaction_id": "TXN1001",
+          "amount": 75000,
+          "destination_country": "USA"
+        }
+      ]
+    },
+    "CUST102": {
+      "name": "Jane Smith",
+      "ssn": "555-66-7777",
+      "tax_records": 120000,
+      "income_reported": 120000,
+      "transactions": [
+        {
+          "transaction_id": "TXN1002",
+          "amount": 45000,
+          "destination_country": "Canada"
+        }
+      ]
+    }
+  },
+  "mortgage_applications": [
+    {
+      "application_id": "APP1001",
+      "applicant_id": "CUST101",
+      "credit_score": 700,
+      "income": 80000,
+      "property_address": "123 Main Street, Anytown, USA",
+      "property_value": 400000,
+      "loan_amount": 320000,
+      "status": "pending"
+    },
+    {
+      "application_id": "APP1002",
+      "applicant_id": "CUST102",
+      "credit_score": 650,
+      "income": 120000,
+      "property_address": "456 Maple Drive, Townsville, USA",
+      "property_value": 300000,
+      "loan_amount": 150000,
+      "status": "pending"
+    }
+  ],
+  "compliance_rules": {
+    "aml_threshold": 50000,
+    "income_vs_tax_variance_threshold": 10000
+  },
+  "property_values": {
+    "123 Main Street, Anytown, USA": 400000,
+    "456 Maple Drive, Townsville, USA": 300000
+  }
+}
