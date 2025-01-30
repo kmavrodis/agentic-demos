@@ -78,14 +78,12 @@ def main():
         st.title("🥷 O1 Multi-Industry Demos")
         
         st.markdown("""
-        ### About
         Build agentic demos to automate your business processes and execute complex scenarios. This app uses OpenAI O1 to plan an agentic workflow and GPT 4o to execute it.
         
         ### Quick Start
         1. Select a use case below
         2. Choose the first tab to view sample data and tools
         3. Choose the second tab to execute an agentic workflow
-        4. Generate a new use case directly in the sidebar
         """)
         
         st.markdown("---")

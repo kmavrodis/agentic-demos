@@ -1,0 +1,63 @@
+{
+  "claims": [
+    {
+      "claim_id": "CLAIM001",
+      "policyholder_id": "POLICY001",
+      "claim_amount": 500000,
+      "claim_type": "Auto Accident",
+      "description": "Accident on Interstate 85, driver rear-ended a truck. Injuries reported.",
+      "fraud_label": false,
+      "status": "Open"
+    },
+    {
+      "claim_id": "CLAIM002",
+      "policyholder_id": "POLICY002",
+      "claim_amount": 12000,
+      "claim_type": "Home Fire",
+      "description": "Fire caused significant damage to the living room. Evidence of accelerants found.",
+      "fraud_label": true,
+      "status": "Open"
+    }
+  ],
+  "policyholders": {
+    "POLICY001": {
+      "name": "John Doe",
+      "address": "123 Oak Street",
+      "claims_history": [
+        "CLAIM001",
+        "OLD_CLAIMA"
+      ]
+    },
+    "POLICY002": {
+      "name": "Jane Smith",
+      "address": "456 Pine Road",
+      "claims_history": [
+        "CLAIM002"
+      ]
+    }
+  },
+  "analysis_rules": {
+    "threshold_amount": 10000,
+    "high_risk_claim_types": [
+      "Home Fire",
+      "Medical Personal Injury"
+    ],
+    "sentiment_keywords": [
+      "accelerant",
+      "arson",
+      "contradictory"
+    ]
+  },
+  "ml_fraud_model": {
+    "version": "1.0",
+    "features": [
+      "claim_amount",
+      "claim_type",
+      "prior_fraud_history",
+      "suspicious_flags_count"
+    ],
+    "fraud_threshold": 0.7
+  },
+  "suspicions": []
+  
+}
